@@ -17,9 +17,9 @@ export const company = {
   emailAlt: "projects@onebharatengineeringservices.com",
   address: {
     line1: "One Bharat Engineering Services",
-    line2: "Baner Business Bay, Baner Road",
-    city: "Pune, Maharashtra",
-    pin: "411045",
+    line2: "404/258/5B, New Sohbatiya Bagh",
+    city: "Prayagraj, Uttar Pradesh",
+    pin: "211006",
     country: "India",
   },
   hours: "Mon – Sat · 9:00 AM – 7:00 PM IST",
@@ -37,6 +37,7 @@ export const nav = [
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Projects", href: "/projects" },
+  { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -356,6 +357,97 @@ export const process = [
     step: "04",
     title: "Sustain",
     text: "Performance verification, documentation and training so results are sustained long term.",
+  },
+];
+
+// ---------------------------------------------------------------- Careers ---
+
+// The company's core scope of work — what a new joiner gets exposure to.
+export const careerAreas = [
+  {
+    icon: "conveyor",
+    title: "Supply, Erection & Commissioning",
+    items: [
+      "RMC (Ready-Mix Concrete) batching plants",
+      "Cement bulk terminals",
+      "Concrete-strengthening chemicals & admixtures",
+      "Grinding aids for clinker grinding",
+    ],
+  },
+  {
+    icon: "blueprint",
+    title: "Consultancy",
+    items: [
+      "SLA (Service Level Agreement) model for cement plants",
+      "Specialised manpower supply",
+      "Clinkerisation, grinding & packing operations",
+    ],
+  },
+  {
+    icon: "people",
+    title: "Training & Development",
+    items: [
+      "Master-trainer led programs",
+      "GET / DET mentoring for O&M",
+      "Innovation and continuous-improvement culture",
+    ],
+  },
+];
+
+// Disciplines / functions the company hires for.
+export const hiringDisciplines = [
+  {
+    icon: "flame",
+    title: "Clinkerisation",
+    text: "Kiln, pyro-processing and refractory operations — from CCR to the platform.",
+  },
+  {
+    icon: "chart",
+    title: "Grinding",
+    text: "Raw, cement and coal mill operation, optimisation and quality control.",
+  },
+  {
+    icon: "conveyor",
+    title: "Packing & Dispatch",
+    text: "Packing plant operation, bulk loading and material-handling systems.",
+  },
+  {
+    icon: "wrench",
+    title: "Erection & Commissioning",
+    text: "Mechanical erection, alignment and commissioning of plant and equipment.",
+  },
+  {
+    icon: "beam",
+    title: "Batching Plant O&M",
+    text: "RMC batching plant operation, maintenance and cement bulk terminals.",
+  },
+  {
+    icon: "blueprint",
+    title: "Process & Consultancy",
+    text: "Process engineering, SLA delivery and technical consultancy support.",
+  },
+];
+
+export const careerBenefits = [
+  {
+    icon: "people",
+    title: "Learn from veterans",
+    text: "Work shoulder-to-shoulder with engineers who have 30–50 years of plant experience.",
+  },
+  {
+    icon: "factory",
+    title: "Real plant exposure",
+    text: "Hands-on assignments across live cement, power and process plants — not just theory.",
+  },
+  {
+    icon: "bolt",
+    title: "Fast-track growth",
+    text: "Structured GET/DET development that moves capable engineers into responsibility quickly.",
+  },
+  {
+    icon: "shield",
+    title: "Safety-first culture",
+    text: "Rigorous safety standards and mentorship on every site you are deputed to.",
   },
 ];
 
