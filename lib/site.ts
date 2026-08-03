@@ -11,10 +11,8 @@ export const company = {
   intro:
     "One Bharat Engineering Services is a specialist industrial engineering consultancy delivering end-to-end technical solutions for the cement, power, steel and process industries — from feasibility and greenfield projects to plant optimization, major maintenance and manpower.",
   foundedExperience: "40+",
-  phonePrimary: "+91 98765 43210",
-  phoneSecondary: "+91 91234 56780",
-  email: "info@onebharatengineeringservices.com",
-  emailAlt: "projects@onebharatengineeringservices.com",
+  phonePrimary: "+91 95758 24800",
+  email: "onebharatengineeringservices@gmail.com",
   address: {
     line1: "One Bharat Engineering Services",
     line2: "404/258/5B, New Sohbatiya Bagh",

@@ -88,9 +88,6 @@ export default function Footer() {
                 <a href={`tel:${company.phonePrimary.replace(/\s/g, "")}`} className="hover:text-saffron-400">
                   {company.phonePrimary}
                 </a>
-                <a href={`tel:${company.phoneSecondary.replace(/\s/g, "")}`} className="hover:text-saffron-400">
-                  {company.phoneSecondary}
-                </a>
               </span>
             </li>
             <li className="flex gap-3">

@@ -15,17 +15,14 @@ export default function ContactPage() {
     {
       icon: "phone" as const,
       title: "Call us",
-      lines: [company.phonePrimary, company.phoneSecondary],
-      hrefs: [
-        `tel:${company.phonePrimary.replace(/\s/g, "")}`,
-        `tel:${company.phoneSecondary.replace(/\s/g, "")}`,
-      ],
+      lines: [company.phonePrimary],
+      hrefs: [`tel:${company.phonePrimary.replace(/\s/g, "")}`],
     },
     {
       icon: "mail" as const,
       title: "Email us",
-      lines: [company.email, company.emailAlt],
-      hrefs: [`mailto:${company.email}`, `mailto:${company.emailAlt}`],
+      lines: [company.email],
+      hrefs: [`mailto:${company.email}`],
     },
     {
       icon: "pin" as const,
