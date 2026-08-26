@@ -19,6 +19,12 @@ export default function ContactPage() {
       hrefs: [`tel:${company.phonePrimary.replace(/\s/g, "")}`],
     },
     {
+      icon: "whatsapp" as const,
+      title: "WhatsApp",
+      lines: ["Chat with us instantly"],
+      hrefs: [`https://wa.me/${company.whatsapp}`],
+    },
+    {
       icon: "mail" as const,
       title: "Email us",
       lines: [company.email],

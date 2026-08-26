@@ -12,6 +12,7 @@ export const company = {
     "One Bharat Engineering Services is a specialist industrial engineering consultancy delivering end-to-end technical solutions for the cement, power, steel and process industries — from feasibility and greenfield projects to plant optimization, major maintenance and manpower.",
   foundedExperience: "40+",
   phonePrimary: "+91 95758 24800",
+  whatsapp: "919575824800", // digits only, with country code — for wa.me links
   email: "onebharatengineeringservices@gmail.com",
   address: {
     line1: "One Bharat Engineering Services",

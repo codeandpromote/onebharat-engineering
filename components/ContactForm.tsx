@@ -30,18 +30,24 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
 
-    // No backend is wired up. Build a mailto so the enquiry is not lost,
-    // then show a confirmation. Replace with an API route / form service
-    // (e.g. Formspree, Resend, HubSpot) when the backend is ready.
-    const subject = encodeURIComponent(
-      `Website enquiry — ${form.service || "General"} — ${form.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nCompany: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\nService: ${form.service}\n\nMessage:\n${form.message}`
+    // Send the enquiry as a pre-filled WhatsApp message. Opens WhatsApp
+    // (app on mobile, web on desktop) addressed to the company number.
+    const text = encodeURIComponent(
+      `Hello One Bharat Engineering Services,\n\n` +
+        `Name: ${form.name}\n` +
+        `Company: ${form.company}\n` +
+        `Email: ${form.email}\n` +
+        `Phone: ${form.phone}\n` +
+        `Service: ${form.service || "General enquiry"}\n\n` +
+        `Message:\n${form.message}`
     );
 
     if (typeof window !== "undefined") {
-      window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
+      window.open(
+        `https://wa.me/${company.whatsapp}?text=${text}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
     }
 
     setTimeout(() => setStatus("success"), 600);
@@ -50,20 +56,22 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center rounded-3xl bg-white p-10 text-center shadow-sm ring-1 ring-navy-100">
-        <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-saffron-100 text-saffron-600">
-          <Icon name="check" size={32} strokeWidth={2.5} />
+        <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366]/15 text-[#128C7E]">
+          <Icon name="whatsapp" size={32} />
         </span>
         <h3 className="mt-5 font-display text-2xl font-bold text-navy-900">
           Thank you!
         </h3>
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-navy-600">
-          Your enquiry has been prepared in your email client. If it didn&apos;t
-          open, please email us directly at{" "}
+          Your enquiry has been opened in WhatsApp — just press send to reach
+          us. If WhatsApp didn&apos;t open, message us directly at{" "}
           <a
-            href={`mailto:${company.email}`}
+            href={`https://wa.me/${company.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold text-saffron-600"
           >
-            {company.email}
+            {company.phonePrimary}
           </a>
           . We typically respond within one business day.
         </p>
@@ -185,14 +193,20 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="btn-primary mt-6 w-full disabled:cursor-not-allowed disabled:opacity-70"
+        className="btn mt-6 w-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/25 hover:-translate-y-0.5 hover:bg-[#1ebe5b] disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {status === "submitting" ? "Sending…" : "Send Enquiry"}
-        {status !== "submitting" && <Icon name="arrow" size={18} />}
+        {status === "submitting" ? (
+          "Opening WhatsApp…"
+        ) : (
+          <>
+            <Icon name="whatsapp" size={20} />
+            Send via WhatsApp
+          </>
+        )}
       </button>
       <p className="mt-3 text-center text-xs text-navy-400">
-        We respect your privacy. Your details are only used to respond to your
-        enquiry.
+        This opens WhatsApp with your message pre-filled — just press send. We
+        respect your privacy and use your details only to respond.
       </p>
     </form>
   );
